@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class GuessingGame {
+    public static void main(String[] args) {
+        int numberToGuess = 50; // Fixed number to guess
+        Scanner scanner = new Scanner(System.in);
+        int guess = 0;
+
+        System.out.println("Guess the number between 1 and 100!");
+
+        while (guess != numberToGuess) {
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
+
+            if (guess < numberToGuess) {
+                System.out.println("Too low! Try again.");
+            } else if (guess > numberToGuess) {
+                System.out.println("Too high! Try again.");
+            } else {
+                System.out.println("Congratulations! You guessed the correct number.");
+            }
+        }
+
+        scanner.close();
+    }
+}
