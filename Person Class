@@ -1,0 +1,82 @@
+
+class Person {
+    private String name;
+    private int age;
+
+   
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+  
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Age: " + age;
+    }
+}
+
+
+class Student extends Person {
+    private String studentId;
+    private String course;
+
+   
+    public Student(String name, int age, String studentId, String course) {
+        super(name, age);
+        this.studentId = studentId;
+        this.course = course;
+    }
+
+   
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+ 
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    
+    @Override
+    public String toString() {
+        return super.toString() + ", Student ID: " + studentId + ", Course: " + course;
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Student student = new Student("Anuj Soni", 25, "S12345", "Java Programming");
+
+        System.out.println(student);
+    }
+}
