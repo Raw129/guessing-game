@@ -1,0 +1,48 @@
+class calculator{
+   
+    public int Sum(int a,int b){
+
+        System.out.println("Hey check out ");
+        return a+b;
+    }
+    public int Sum(int a,int b,int c){
+        return a+b+c;
+    }
+    public String stringSum(String x,String y){
+        return x+y;
+    }
+}
+class Animal{
+    public void Sound(){
+        System.out.println("Animal can Sound");
+    }
+    static class Dog extends Animal{
+        @Override
+        public void Sound(){
+            System.out.println("Dog do wolk");
+        }
+
+    }
+
+}
+
+public class methedOverlodaing {
+    public static void main(String[] args) {
+        calculator cal = new calculator();
+        System.out.println("Two pernametar is :" + cal.Sum(2, 5));
+        System.out.println("Two pernametar is :" + cal.Sum(2, 5, 8));
+        System.out.println("String Sum is:" + cal.stringSum("Anuj", "Soni"));
+
+        Animal Ani = new Animal();
+        Animal myDog = new Animal.Dog();
+        Ani.Sound();
+        myDog.Sound();
+
+    }
+}
+
+/*Implement method overloading by creating a Calculator class with methods to add two numbers,
+three numbers, and concatenate strings.
+Demonstrate method overriding using an example of a parent Animal class and a Dog subclass,
+where sound() is overridden.
+*/
