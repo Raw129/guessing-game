@@ -1,0 +1,62 @@
+abstract class CompanyRow {
+    String name;
+    int id;
+
+    CompanyRow(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    abstract void work();
+
+    void displayDetails() {
+        System.out.println("ID: " + id + ", Name: " + name);
+    }
+}
+
+class Manager extends CompanyRow {
+    Manager(String name, int id) {
+        super(name, id);
+    }
+
+    void work() {
+        System.out.println(name + " is managing the team.");
+    }
+}
+class Employee extends CompanyRow {
+    Employee(String name,int id){
+        super (name,id);
+    }
+
+    @Override
+    void work() {
+        System.out.println(name+" Employee Do Work");
+    }
+}
+
+class Intern extends CompanyRow {
+    Intern(String name, int id) {
+        super(name, id);
+    }
+
+    void work() {
+        System.out.println(name + " is working as an intern.");
+    }
+}
+
+
+public class OfficMangement {
+    public static void main(String[] args) {
+        CompanyRow manager = new Manager("Rohn",102);
+        CompanyRow Employee=new Employee("Raman",101);
+        CompanyRow intern = new Intern("Kushi", 103);
+
+        manager.displayDetails();
+        manager.work();
+        Employee.displayDetails();
+        Employee.work();
+        intern.displayDetails();
+        intern.work();
+    }
+}
+
